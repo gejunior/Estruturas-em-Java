@@ -72,11 +72,9 @@ public class Exercicios {
     }
     
     public static void main(String[] args) {
-//        ex1Idade();
-//        ex2Quadrado();
-//        ex3Retangulo();
-//        ex4DiferencaIdade();
-        int total = 2%2;
-        System.out.println(String.format("teste de divisao %d", total));
+        ex1Idade();
+        ex2Quadrado();
+        ex3Retangulo();
+        ex4DiferencaIdade();
     }
 }
