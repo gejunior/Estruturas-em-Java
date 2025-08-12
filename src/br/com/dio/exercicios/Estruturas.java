@@ -4,6 +4,7 @@
  */
 package br.com.dio.exercicios;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -100,12 +101,39 @@ public class Estruturas {
         
     }
     
+    public static void ex4(){
+        System.out.println("Informe o numero 1");
+        int a = ler.nextInt();
+        int b = 0;
+        do{
+            System.out.println("informe outro numero: ");
+            b = ler.nextInt();
+            
+        }while((b/a)%2 != 0);
+    }
+    
+    public static void desconto(){
+        double produto = ler.nextDouble();
+
+        // TODO: Leia a porcentagem de desconto:
+        double desconto = ler.nextDouble();
+        // TODO: Verifique se o desconto está dentro de um intervalo válido:
+        if(desconto > 0 && desconto <= 100){
+            // TODO: Calcule o valor final do produto:
+            double valorFinal = produto - (produto * (desconto/100));  
+            DecimalFormat df = new DecimalFormat("0.00");
+            System.out.println(df.format(valorFinal));
+        }else{
+          System.out.println("Desconto invalido");
+        }
+    }
     
     public static void main(String[] args) {
-//        tabuada();
-//        calcularIMC();
+        tabuada();
+        calcularIMC();
         exIntervalo();
-    
-        
+        ex4();
+        desconto();
     }
+        
 }
