@@ -61,22 +61,47 @@ public final class Conta {
         }
     }
     
+    public void info(){
+        System.out.println("--- info ---");
+        System.out.println("saldo: " + getSaldo());
+        System.out.println("cheque: " + getCheque());
+        System.out.println("boleto: " + getBoleto());
+        System.out.println("------------");
+    }
+    
     public void sacar(double valor){
-        if(valor > 0){
-            if(valor < this.saldo){
-                this.setSaldo(saldo-valor);
-                return;
-            }else if(valor > this.saldo && valor <= this.cheque){
-                
+        double saldoTotalDisponivel = getSaldo() + getCheque();
+        if(valor <= 0){
+            System.out.println("Valor deve ser maior que zero.");
+            return;
+        }
+//        - verificar se a soma dos dois valores podem ser tirado o valor de saque
+        if(saldoTotalDisponivel >= valor){
+            if(getSaldo() > 0){
+                if(valor > getSaldo()){
+                    valor -= saldo;
+                    saldo = 0;
+                }else {
+                    setSaldo(saldo - valor);
+                    valor = 0;
+                }
+            info();
+            if(valor > 0 && valor <= this.cheque){
                 this.setCheque(this.cheque-valor);
                 this.setBoleto(boleto+valor);
-                return;
+                info();
             }
-            
-            
-            System.out.println("Valor insuficiente!");
+            }else if(valor > 0 && valor <= this.cheque){
+                this.setCheque(this.cheque-valor);
+                this.setBoleto(boleto+valor);
+                info();
+            }else if(saldoTotalDisponivel <= 0){
+                System.out.println("Valor pra saque insuficiente.");
+            }
+            System.out.println("Saque efetuado com sucesso!");
+            return;
         }
-        System.out.println("Valor negativo!");
+        System.out.println("Saldo insuficiente!");
     }
     
     public void pagarBoleto(double valor){
@@ -125,13 +150,13 @@ public final class Conta {
                 case 1 -> System.out.println("Saldo de: R$" + c.getSaldo());
                 case 2 -> System.out.println("cheque de: R$" + c.getCheque());
                 case 3 ->  {
-                    System.out.println("Valor a depositar: "); 
+                    System.out.print("Valor a depositar: "); 
                     c.depositar(ler.nextDouble());
                 }case 4 -> {
-                    System.out.println("Valor pra sacar: "); 
+                    System.out.print("Valor pra sacar: "); 
                     c.sacar(ler.nextDouble());
                 }case 5 -> {
-                    System.out.println("Valor do boleto: R$" + c.getBoleto() + "\nDeseja pagar? (s/n)");
+                    System.out.print("Valor do boleto: R$" + c.getBoleto() + "\nDeseja pagar? (s/n)");
                     if(!"s".equals(ler.next().toLowerCase())){
                         System.out.println("Cuidado com a taxa!");
                     }else{
