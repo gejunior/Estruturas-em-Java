@@ -2,15 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.dio;
+package br.com.dio.classes;
 
 /**
  *
  * @author Genilson Junior
- * 
- * 
- * variaveis primitivas são com os nomes em minusculas
- * já os Objects tem a primeira letra maiuscula.
- * 
  */
-
+public class BigDecimal {
+    
+}

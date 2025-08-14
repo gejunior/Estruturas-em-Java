@@ -4,7 +4,7 @@
  */
 package br.com.dio;
 
-import br.com.dio.exercicios.User;
+import br.com.dio.classes.User;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
@@ -29,8 +29,8 @@ public class Principal {
 //        
 //        System.out.println("resultado " + b);
 
-        List<User> users = List.of(new User("Junior", 23), new User("Iza", 21),
-                new User("Gerson", 40));
+//        List<User> users = List.of(new User("Junior", 23), new User("Iza", 21),
+//                new User("Gerson", 40));
 //        var consumer = new Consumer<User>(){
 //            @Override
 //            public void accept(final User user) {
@@ -52,8 +52,8 @@ public class Principal {
         
 //        users.forEach(System.out::println);
         
-        printStringValue(User::name, users);
-        printStringValue(Record::toString, users);
+//        printStringValue(User::name, users);
+//        printStringValue(Record::toString, users);
         
     }
     private static void printStringValue(Function<User, String> callback, List<User> users){
