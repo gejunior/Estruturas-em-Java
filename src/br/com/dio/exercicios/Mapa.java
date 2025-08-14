@@ -26,11 +26,10 @@ public class Mapa {
 //        users.replace("leo", new User("leo", 33));
 //        System.out.println("usando getOrDefault: " + users.getOrDefault("leo@leo.com", new User(" ", -1))); 
 //        System.out.println("usando somente get: " + users.get("leo@leo.com"));
-        users.merge("", new User("", -1), (user, user2) -> {
-            System.out.println(user);
-            System.out.println(user2);
-            return user;
-        });
-        System.out.println("");
+//        users.merge("", new User("", -1), (user, user2) -> {
+//            System.out.println(user);
+//            System.out.println(user2);
+//            return user;
+//        });
     }
 }
