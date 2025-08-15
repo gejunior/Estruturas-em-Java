@@ -4,10 +4,9 @@
  */
 package br.com.dio.classes;
 
-import java.util.List;
-
 /**
  *
  * @author Genilson Junior
  */
-public record User (String name, int age, Sex sex, List<Contact> contacts){}
+public record Contact(String description, ContactType type){
+}

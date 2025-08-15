@@ -2,12 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.dio.classes;
+package br.com.dio.dao;
 
-import java.util.List;
+import br.com.dio.domain.UserDomain;
 
 /**
  *
  * @author Genilson Junior
  */
-public record User (String name, int age, Sex sex, List<Contact> contacts){}
+public class UserDAO extends GenericDAO<UserDomain>{
+    
+}

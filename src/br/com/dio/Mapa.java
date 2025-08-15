@@ -4,6 +4,7 @@
  */
 package br.com.dio;
 
+import br.com.dio.classes.Sex;
 import br.com.dio.classes.User;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,10 +16,10 @@ import java.util.Map;
 public class Mapa {
     public static void main(String[] args) {
         Map<String, User> users = new HashMap<>();
-        users.put("joao@joao.com", new User("Joao", 21));
-        users.put("junin@junin.com", new User("junin", 23));
-        users.put("ana@ana.com", new User("ana", 32));
-        users.put("leo@leo.com", new User("leo", 32));
+//        users.put("joao@joao.com", new User("Joao", 21));
+//        users.put("junin@junin.com", new User("junin", 23));
+//        users.put("ana@ana.com", new User("ana", 32));
+//        users.put("leo@leo.com", new User("leo", 32));
 
 //        System.out.println(users.containsKey("leo@leo.com"));
 //        System.out.println(users.containsValue(new User("leo", 32)));

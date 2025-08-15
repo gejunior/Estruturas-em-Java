@@ -37,15 +37,15 @@ public class StreamAula {
 //        for (var v : v2) {
 //            System.out.println(v2);
 //        }
-        var value = Stream.of("Junin", "juao", "Iza", "raimundo", "reinaldo")
+//        var value = Stream.of("Junin", "juao", "Iza", "raimundo", "reinaldo")
 //                .peek(System.out::println)
 //                .limit(2)
 //                .filter(name -> name.endsWith("o"))//tras os nomes com a final "o".
 //                .toList();
-                .filter(n -> n.endsWith("o"))
-                .noneMatch(n -> n.contains("o"));
-                
-        System.out.println(value);
+//                .filter(n -> n.endsWith("o"))
+//                .noneMatch(n -> n.contains("o"));
+//                
+//        System.out.println(value);
         
     }
 }

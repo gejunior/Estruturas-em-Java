@@ -5,6 +5,9 @@
 package br.com.dio;
 
 import br.com.dio.classes.User;
+import br.com.dio.dao.GenericDAO;
+import br.com.dio.dao.UserDAO;
+import br.com.dio.domain.UserDomain;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
@@ -15,6 +18,8 @@ import java.util.function.Function;
  * @author Genilson Junior
  */
 public class Principal {
+    private final static GenericDAO<UserDomain> dao = new UserDAO();
+    
     public static void main(String[] args) {
 //        Scanner ler = new Scanner(System.in);
 //        System.out.print("Ola, qual e o seu nome? ");
@@ -54,10 +59,18 @@ public class Principal {
         
 //        printStringValue(User::name, users);
 //        printStringValue(Record::toString, users);
-        
+
+        //================= Sistema Dao =========================
+        var user = new UserDomain(1, "Joao", 36);
+        System.out.println(dao.count());
+        System.out.println(dao.save(user));
+        System.out.println(dao.findAll());
+        System.out.println(dao.count());
+        dao.delete(new UserDomain(-1, "", -1));
+        dao.delete(user);
     }
-    private static void printStringValue(Function<User, String> callback, List<User> users){
-        users.forEach(u -> System.out.println(callback.apply(u)));
-    }
+//    private static void printStringValue(Function<User, String> callback, List<User> users){
+//        users.forEach(u -> System.out.println(callback.apply(u)));
+//    }
     
 }
